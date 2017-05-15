@@ -19,7 +19,7 @@ public class Main {
     private static void simulateDriving(Vehicle vehicle) {
         vehicle.start();
         vehicle.stop();
-       // vehicle.shiftGear(1);
+        vehicle.shiftGear(1);
         vehicle.drive(1,1);
       //  vehicle.shiftGear(2);
         vehicle.drive(2,0.1);
