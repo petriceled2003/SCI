@@ -9,17 +9,6 @@ import ro.sci.carrental.util.VehicleCategory;
 
 import java.util.List;
 
-/**
- * <h1>RentACar Model</h1>
- * RentACar simulates a car rental business.
- *
- * <h>
- * This is the main method which makes use of static void method searches() to run multiple queries
- *
- * @author Flaviu Lupoian
- * @version 1.0
- * @since 1.8
- */
 public class Main {
     public static void main(String[] args) {
         // initializam masini
