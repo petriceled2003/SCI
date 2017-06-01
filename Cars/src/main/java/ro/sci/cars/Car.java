@@ -39,7 +39,7 @@ public class Car implements Vehicle {
          *
          * calculeaza cat s-a consumat in functie de nr de km si treapta de viteza curenta
          * case currentGear==1
-         * calculateFuel(1,km)
+         * calculateFuel(1,km) am mai adaugat aceste cuvinte pentru a testa
          *
          */
 
