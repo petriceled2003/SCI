@@ -4,6 +4,7 @@ import java.sql.Struct;
 
 /**
  * Created by Roronoa on 5/29/2017.
+ * Address class cu informatiile despre un customer
  */
 public class Address {
     private String name;
