@@ -1,4 +1,4 @@
-package ro.sci.carrental.customer;
+package ro.sci.carrental.repository;
 
 import java.sql.Struct;
 
