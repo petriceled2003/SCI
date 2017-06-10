@@ -1,7 +1,7 @@
 package ro.sci.carrental.repository;
 
-import ro.sci.carrental.domain.Car;
-import ro.sci.carrental.util.FuelType;
+import ro.sci.carrental.domain.car.Car;
+import ro.sci.carrental.domain.car.FuelType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,7 @@ import java.util.List;
 public class CarRepositoryImpl implements CarRepository {
 
     private List<Car> cars = new ArrayList<Car>();
+
 
     public List<Car> getCarsByMake(String make) {
         return null;

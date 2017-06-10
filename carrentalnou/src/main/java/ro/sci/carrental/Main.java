@@ -1,11 +1,11 @@
 package ro.sci.carrental;
 
-import ro.sci.carrental.domain.Customer;
-import ro.sci.carrental.domain.Car;
+import ro.sci.carrental.domain.customer.Customer;
+import ro.sci.carrental.domain.car.Car;
 import ro.sci.carrental.repository.CarRepositoryImpl;
 import ro.sci.carrental.service.SearchServiceImpl;
-import ro.sci.carrental.util.FuelType;
-import ro.sci.carrental.util.VehicleCategory;
+import ro.sci.carrental.domain.car.FuelType;
+import ro.sci.carrental.domain.car.VehicleCategory;
 
 import java.util.List;
 
@@ -24,8 +24,8 @@ public class Main {
         carRepository.add(vw);
 
         //initializam clienti
-        Customer customer1 = new Customer("Dorel", "Cretu", "Str. Carpati nr.1", "Cluj-Napoca");
-        Customer customer2 = new Customer("Pavel", "Cristea", "Str. Bucegi nr.1", "Oradea");
+        Customer customer1 = new Customer("Dorel", "Cretu", "Str. Carpati nr.1", "Cluj-Napoca","adresa");
+        Customer customer2 = new Customer("Pavel", "Cristea", "Str. Bucegi nr.1", "Oradea","adresa");
 
         //efectuam cautari
         searches(carRepository);
