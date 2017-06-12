@@ -24,8 +24,8 @@ public class Main {
         carRepository.add(vw);
 
         //initializam clienti
-        Customer customer1 = new Customer("Dorel", "Cretu", "Str. Carpati nr.1", "Cluj-Napoca","adresa");
-        Customer customer2 = new Customer("Pavel", "Cristea", "Str. Bucegi nr.1", "Oradea","adresa");
+        Customer customer1 = new Customer();
+        Customer customer2 = new Customer();
 
         //efectuam cautari
         searches(carRepository);

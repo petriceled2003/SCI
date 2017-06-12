@@ -17,23 +17,23 @@ public class Car {
 
     // constructor sa mai sterg din parametri
 
-//    public Car() {
-//    }
-
-
-    public Car(String make, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, boolean gearbox, FuelType fuelType, VehicleCategory vehicleCategory) {
-        this.make = make;
-        this.model = model;
-        this.size = size;
-        this.color = color;
-        this.seats = seats;
-        this.doors = doors;
-        this.ac = ac;
-        this.gps = gps;
-        this.gearbox = gearbox;
-        this.fuelType = fuelType;
-        this.vehicleCategory = vehicleCategory;
+    public Car() {
     }
+
+
+//    public Car(String make, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, boolean gearbox, FuelType fuelType, VehicleCategory vehicleCategory) {
+//        this.make = make;
+//        this.model = model;
+//        this.size = size;
+//        this.color = color;
+//        this.seats = seats;
+//        this.doors = doors;
+//        this.ac = ac;
+//        this.gps = gps;
+//        this.gearbox = gearbox;
+//        this.fuelType = fuelType;
+//        this.vehicleCategory = vehicleCategory;
+//    }
 
 
 

@@ -13,13 +13,17 @@ public class Customer {
 //scoatem tot ce tine de adresa in alta clasa : Adresa
     //adresa o definim noi
     // constructor
-    public Customer(String firstName, String lastName, String streetAddress, String city, String adresa) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.streetAddress = streetAddress;
-        this.city = city;
-        this.adresa = adresa;
+
+    public Customer() {
     }
+
+//    public Customer(String firstName, String lastName, String streetAddress, String city, String adresa) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.streetAddress = streetAddress;
+//        this.city = city;
+//        this.adresa = adresa;
+//    }
 
     public String getFirstName() {
         return firstName;
