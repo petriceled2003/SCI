@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Roronoa on 5/25/2017.
  */
-public interface SearchService {
+public interface CarSearchService {
 
     List<Car> findCarsByMake(String make);
 

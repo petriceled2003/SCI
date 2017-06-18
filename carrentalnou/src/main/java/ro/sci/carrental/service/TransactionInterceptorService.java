@@ -5,4 +5,5 @@ package ro.sci.carrental.service;
  */
 public interface TransactionInterceptorService {
 
+
 }

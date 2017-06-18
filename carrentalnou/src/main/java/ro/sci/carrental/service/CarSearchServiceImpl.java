@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SearchServiceImpl implements SearchService {
+public class CarSearchServiceImpl implements CarSearchService {
 
     private CarRepositoryImpl carRepository;
 
-    public SearchServiceImpl(CarRepositoryImpl carRepository) {
+    public CarSearchServiceImpl(CarRepositoryImpl carRepository) {
 
         this.carRepository = carRepository;
     }

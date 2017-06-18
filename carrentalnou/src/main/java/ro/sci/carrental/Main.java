@@ -3,18 +3,16 @@ package ro.sci.carrental;
 import ro.sci.carrental.domain.customer.Customer;
 import ro.sci.carrental.domain.car.Car;
 import ro.sci.carrental.repository.CarRepositoryImpl;
-import ro.sci.carrental.service.SearchServiceImpl;
-import ro.sci.carrental.domain.car.FuelType;
-import ro.sci.carrental.domain.car.VehicleCategory;
+import ro.sci.carrental.service.CarSearchServiceImpl;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         // initializam masini
-        Car mercedes = new Car("Mercedes", "e220d", 5.0f, "Black", 5, 4, true, true,true, FuelType.DIESEL, VehicleCategory.LIMOUSINE);
-        Car bmw = new Car("BMW", "520d", 5.0f, "Silver", 5, 4, true, true,true, FuelType.GAS, VehicleCategory.SPORT);
-        Car vw = new Car("Volkswagen", "Passat", 5.0f, "White", 5, 4, true, false,false, FuelType.GPL, VehicleCategory.SEDAN);
+        Car mercedes = new Car();
+        Car bmw = new Car();
+        Car vw = new Car();
 
         CarRepositoryImpl carRepository = new CarRepositoryImpl();
 
@@ -22,6 +20,7 @@ public class Main {
         carRepository.add(mercedes);
         carRepository.add(bmw);
         carRepository.add(vw);
+
 
         //initializam clienti
         Customer customer1 = new Customer();
@@ -46,7 +45,7 @@ public class Main {
         System.out.println("_____________________________________");
 
         //cautare dupa marca
-        SearchServiceImpl search1 = new SearchServiceImpl(carRepository);
+        CarSearchServiceImpl search1 = new CarSearchServiceImpl(carRepository);
         List<Car> foundCarsByMake = search1.findCarsByMake("BMW");
 
         System.out.println("Cautarea dupa Marca returneaza urmatoarele masini: ");
@@ -56,7 +55,7 @@ public class Main {
         System.out.println("_____________________________________");
 
         //cautare dupa marca si model
-        SearchServiceImpl search2 = new SearchServiceImpl(carRepository);
+        CarSearchServiceImpl search2 = new CarSearchServiceImpl(carRepository);
         List<Car> foundCarsByMakeAndModel = search2.findCarsByMakeAndModel("Mercedes", "e220d");
 
         System.out.println("Cautarea dupa Marca si Model returneaza urmatoarele masini: ");
@@ -66,7 +65,7 @@ public class Main {
         System.out.println("_____________________________________");
 
         //cautare dupa Marca, Model, Culoare si Locuri
-        SearchServiceImpl search3 = new SearchServiceImpl(carRepository);
+        CarSearchServiceImpl search3 = new CarSearchServiceImpl(carRepository);
         List<Car> foundCarsByMultipleCategories = search3.findCarsByMultipleCategories(
                 "Volkswagen", "Passat", "White", 5);
 

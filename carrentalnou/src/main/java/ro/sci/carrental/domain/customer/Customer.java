@@ -6,8 +6,8 @@ public class Customer {
     private String lastName;
     private String streetAddress;
     private String city;
-    private String adresa;
-  //  private Address adresa;
+    //private String adresa;
+   private Address adresa;
  //  private String adresa;
 
 //scoatem tot ce tine de adresa in alta clasa : Adresa
