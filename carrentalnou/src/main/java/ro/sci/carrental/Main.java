@@ -1,7 +1,8 @@
 package ro.sci.carrental;
 
-import ro.sci.carrental.domain.customer.Customer;
 import ro.sci.carrental.domain.car.Car;
+import ro.sci.carrental.domain.customer.Address;
+import ro.sci.carrental.domain.customer.Customer;
 import ro.sci.carrental.repository.CarRepositoryImpl;
 import ro.sci.carrental.service.CarSearchServiceImpl;
 
@@ -23,8 +24,12 @@ public class Main {
 
 
         //initializam clienti
+        Address adress = new Address();
         Customer customer1 = new Customer();
+        customer1.setAdresa(adress);
         Customer customer2 = new Customer();
+        Address adress2 = new Address();
+        customer2.setAdresa(adress2);
 
         //efectuam cautari
         searches(carRepository);
@@ -34,6 +39,7 @@ public class Main {
 
     /**
      * Public static void method searches() runs multiple searches criteria
+     *
      * @param carRepository holds the values of car list.
      */
     private static void searches(CarRepositoryImpl carRepository) {
@@ -42,7 +48,7 @@ public class Main {
         for (Car car : carRepository.getAll()) {
             System.out.println(car.getMake());
         }
-        System.out.println("_____________________________________");
+
 
         //cautare dupa marca
         CarSearchServiceImpl search1 = new CarSearchServiceImpl(carRepository);
@@ -52,7 +58,7 @@ public class Main {
         for (Car car : foundCarsByMake) {
             System.out.println(car.getMake() + " " + car.getModel());
         }
-        System.out.println("_____________________________________");
+
 
         //cautare dupa marca si model
         CarSearchServiceImpl search2 = new CarSearchServiceImpl(carRepository);
@@ -62,7 +68,7 @@ public class Main {
         for (Car car : foundCarsByMakeAndModel) {
             System.out.println(car.getMake() + " " + car.getModel());
         }
-        System.out.println("_____________________________________");
+
 
         //cautare dupa Marca, Model, Culoare si Locuri
         CarSearchServiceImpl search3 = new CarSearchServiceImpl(carRepository);
@@ -73,6 +79,6 @@ public class Main {
         for (Car car : foundCarsByMultipleCategories) {
             System.out.println(car.getMake() + " " + car.getModel());
         }
-        System.out.println("_____________________________________");
+
     }
 }

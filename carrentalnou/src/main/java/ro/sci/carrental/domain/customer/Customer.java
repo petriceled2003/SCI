@@ -11,7 +11,16 @@ public class Customer {
 
  // constructor
 
+    public Address getAdresa() {
+        return adresa;
+    }
+
+    public void setAdresa(Address adresa) {
+        this.adresa = adresa;
+    }
+
     public Customer() {
+
     }
 
 //    public Customer(String firstName, String lastName, String streetAddress, String city, String adresa) {
