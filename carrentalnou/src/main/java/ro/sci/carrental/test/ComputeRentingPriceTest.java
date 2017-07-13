@@ -22,6 +22,7 @@ assertEquals(res,50, 0.000000000001d);
 
     }
 
+
     @Test
     public void calculatePrice2() throws Exception {
 
