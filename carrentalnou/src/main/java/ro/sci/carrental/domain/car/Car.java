@@ -14,6 +14,8 @@ public class Car {
     private FuelType fuelType;
     private VehicleCategory vehicleCategory;
 
+    private String engine;
+
 
     // constructor sa mai sterg din parametri
 
@@ -34,7 +36,6 @@ public class Car {
 //        this.fuelType = fuelType;
 //        this.vehicleCategory = vehicleCategory;
 //    }
-
 
 
     public String getMake() {
@@ -123,5 +124,31 @@ public class Car {
 
     public void setVehicleCategory(VehicleCategory vehicleCategory) {
         this.vehicleCategory = vehicleCategory;
+    }
+
+    public String getEngine() {
+        return engine;
+    }
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", size=" + size +
+                ", color='" + color + '\'' +
+                ", seats=" + seats +
+                ", doors=" + doors +
+                ", ac=" + ac +
+                ", gps=" + gps +
+                ", gearbox=" + gearbox +
+                ", fuelType=" + fuelType +
+                ", vehicleCategory=" + vehicleCategory +
+                ", engine='" + engine + '\'' +
+                '}';
     }
 }

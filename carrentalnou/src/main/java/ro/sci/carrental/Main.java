@@ -1,39 +1,84 @@
 package ro.sci.carrental;
 
 import ro.sci.carrental.domain.car.Car;
-import ro.sci.carrental.domain.customer.Address;
 import ro.sci.carrental.domain.customer.Customer;
+import ro.sci.carrental.reader.CarConvertor;
+import ro.sci.carrental.reader.CustomerConvertor;
+import ro.sci.carrental.reader.EntityReader;
+import ro.sci.carrental.reader.InvalidEntityException;
 import ro.sci.carrental.repository.CarRepositoryImpl;
 import ro.sci.carrental.service.CarSearchServiceImpl;
 
+import java.io.File;
 import java.util.List;
 
+
 public class Main {
+
+    // private static final Logger log = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
         // initializam masini
-        Car mercedes = new Car();
-        Car bmw = new Car();
-        Car vw = new Car();
-
-        CarRepositoryImpl carRepository = new CarRepositoryImpl();
-
-        //introducem masini
-        carRepository.add(mercedes);
-        carRepository.add(bmw);
-        carRepository.add(vw);
 
 
-        //initializam clienti
-        Address adress = new Address();
-        Customer customer1 = new Customer();
-        customer1.setAdresa(adress);
-        Customer customer2 = new Customer();
-        Address adress2 = new Address();
-        customer2.setAdresa(adress2);
+        File file = new File("cars.txt");
+        EntityReader ent = new EntityReader();
+        List<String> lines = ent.readLines(file);
+        CarConvertor carConvertor = new CarConvertor();
+        int i = 0;
+        for (String line : lines) {
+            i++;
+            Car car = null;
+            try {
+                car = carConvertor.convert(line);
+                System.out.println(car);
+            } catch (InvalidEntityException e) {
 
-        //efectuam cautari
-        searches(carRepository);
+                System.out.println("invalid car for: [" + line + "] at line: " + i);
+            }
+        }
 
+//initializam Customers
+
+        File fileInputCustomers = new File("customers.txt");
+        EntityReader entCustomer = new EntityReader();
+        List<String> linesCustomer = entCustomer.readLines(fileInputCustomers);
+        CustomerConvertor customerConv = new CustomerConvertor();
+        int j = 0;
+        for (String line : linesCustomer) {
+            j++;
+            Customer customer = null;
+            try {
+                customer = customerConv.convert(line);
+                System.out.println(customer);
+            } catch (InvalidEntityException e) {
+
+                System.out.println("invalid line at line: " + j);
+            }
+
+        }
+
+//        Car mercedes = new Car();
+//        Car bmw = new Car();
+//        Car vw = new Car();
+//
+//        CarRepositoryImpl carRepository = new CarRepositoryImpl();
+//
+//        //introducem masini
+//        carRepository.add(mercedes);
+//        carRepository.add(bmw);
+//        carRepository.add(vw);
+//
+//        //initializam clienti
+//        Address adress = new Address();
+//        Customer customer1 = new Customer();
+//        customer1.setAdresa(adress);
+//        Customer customer2 = new Customer();
+//        Address adress2 = new Address();
+//        customer2.setAdresa(adress2);
+//
+//        //efectuam cautari
+//        searches(carRepository);
 
     }
 

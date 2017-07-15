@@ -6,6 +6,7 @@ public class Customer {
     private String lastName;
     private String streetAddress;
     private String city;
+
     private Address adresa;
 
 
@@ -16,7 +17,7 @@ public class Customer {
     }
 
     public void setAdresa(Address adresa) {
-        this.adresa = adresa;
+       this.adresa = adresa;
     }
 
     public Customer() {
@@ -61,5 +62,16 @@ public class Customer {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", streetAddress='" + streetAddress + '\'' +
+                ", city='" + city + '\'' +
+                ", adresa=" + adresa +
+                '}';
     }
 }
