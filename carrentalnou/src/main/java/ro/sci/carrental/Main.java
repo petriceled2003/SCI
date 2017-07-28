@@ -11,8 +11,11 @@ import ro.sci.carrental.reader.EntityReader;
 import ro.sci.carrental.reader.InvalidEntityException;
 import ro.sci.carrental.repository.CarRepositoryImpl;
 import ro.sci.carrental.service.CarSearchServiceImpl;
+import ro.sci.carrental.writer.EntityWriter;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -28,19 +31,34 @@ public class Main {
         List<String> lines = ent.readLines(file);
         CarConvertor carConvertor = new CarConvertor();
         int i = 0;
+
+        List<Car> carList = new ArrayList<>();
         for (String line : lines) {
             i++;
-            Car car = null;
+            List<Car> car = null;
             try {
                 car = carConvertor.convert(line);
                 // System.out.println(car);
-                LOGGER.info("info car " + car);
-            } catch (InvalidEntityException e) {
+                LOGGER.info(car.toString());
+                EntityWriter.writeCarToCsv(new File("cars.csv"), (Car) car);
+            } catch (InvalidEntityException | IOException e) {
 
                 LOGGER.info("invalid car for: [" + line + "] at line: " + i);
             }
         }
+//Scriem in CSV obiectele cars
 
+//        try {
+//            EntityWriter.writeCarToCsv(new File("car.csv"), carList);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+//        try {
+//            EntityWriter.writeCarToCsv(new File("cars1.csv"),carList);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 //initializam Customers
 
         File fileInputCustomers = new File("customers.txt");
@@ -54,8 +72,9 @@ public class Main {
             try {
                 customer = customerConv.convert(line);
                 //   System.out.println(customer);
-                LOGGER.info("info customer " + customer);
-            } catch (InvalidEntityException e) {
+                LOGGER.info(customer.toString());
+                EntityWriter.writeCustomerToCsv(new File("customers.csv"),customer);
+            } catch (InvalidEntityException |IOException e) {
 
                 LOGGER.info("invalid line at line: " + j);
             }

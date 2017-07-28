@@ -1,2 +1,3 @@
 VW,Passat,Rozbonbon,2.0 TDI,8,Petrol
 AUDI,Q68,Movcudetoate,7.0 TDDI,8,GPL
+SKODA,OCTAVIA,ROS,8.0 TDI,8,DIESEL
