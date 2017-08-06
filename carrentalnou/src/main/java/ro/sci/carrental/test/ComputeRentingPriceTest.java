@@ -10,9 +10,7 @@ import static org.junit.Assert.*;
  */
 public class ComputeRentingPriceTest {
 
-    // 5    10  50
-    //1 0 0
-    ComputeRentingPrice p1=new ComputeRentingPrice(5,10);
+      ComputeRentingPrice p1=new ComputeRentingPrice(5,10);
     @Test
     public void calculatePrice() throws Exception {
 
